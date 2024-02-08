@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activity.DescriptionActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_700"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/toolbar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:id="@+id/llContent"
+                android:orientation="horizontal"
+                android:weightSum="6">
+
+                <ImageView
+                    android:layout_weight="1.5"
+                    android:id="@+id/imgBookImage"
+                    android:layout_width="0dp"
+                    android:layout_height="120dp"
+                    android:padding="5dp"
+                    android:src="@mipmap/ic_launcher"
+                    android:scaleType="centerCrop"
+
+                    />
+
+                <RelativeLayout
+                    android:layout_weight="3.3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:id="@+id/txtBookName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Name of the book"
+                        android:padding="8dp"
+                        android:textSize="18sp"
+                        android:textColor="#000000"/>
+
+                    <TextView
+                        android:id="@+id/txtBookAuthor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtBookName"
+                        android:text="Name of the Author"
+                        android:textColor="#000000"
+                        android:padding="8dp"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/txtBookPrice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:text="Rs. 299"
+                        android:padding="8dp"
+                        android:layout_below="@id/txtBookAuthor"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#357a38"/>
+                </RelativeLayout>
+
+
+                <!--Many times we see that texts have an image along with them to
+                their right or left. This is added with the help of the
+                drawableLeft (or drawableRight and so on) attribute-->
+
+                <TextView
+                    android:id="@+id/txtBookRating"
+                    android:layout_weight="1.2"
+                    android:layout_width="0dp"
+                    android:padding="4dp"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_rating"
+                    android:textColor="#ffca28"
+                    android:text="4.5"
+                    android:drawablePadding="4dp"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+
+
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/llContent"
+                >
+
+                <TextView
+                    android:id="@+id/txtAboutTheBookStatic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                      android:textColor="@color/black"
+                    android:padding="10dp"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:text="About The Book"/>
+
+                <TextView
+                    android:id="@+id/txtBookDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:padding="6dp"
+                    android:textStyle="bold"
+                    android:layout_below="@id/txtAboutTheBookStatic"
+                    android:textSize="16sp"
+                    android:text="Blank Frame"
+                    android:textColor="@color/black"/>
+
+
+
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btnAddToFav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:backgroundTint="@color/teal_700"
+        android:text="Add To Favourite"
+        android:textSize="19dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"/>
+
+   <RelativeLayout
+       android:id="@+id/progressLayout"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="#ffffff">
+
+       <ProgressBar
+           android:id="@+id/progressBar"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerInParent="true"/>
+
+
+
+   </RelativeLayout>
+
+
+</RelativeLayout>
